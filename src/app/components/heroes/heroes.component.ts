@@ -13,9 +13,9 @@ export class HeroesComponent {
   heroes: IHeroInterface[] = [];
 
   constructor(
-    private heroService: HeroService,
-    private messageService: MessageService
-  ) {}
+    private heroService: HeroService
+  ) // private messageService: MessageService
+  {}
 
   ngOnInit(): void {
     this.getHeroes();
@@ -25,9 +25,9 @@ export class HeroesComponent {
     this.heroService.getHeroes().subscribe((heroes) => (this.heroes = heroes));
   }
 
-  selectedHero?: IHeroInterface;
-  onSelect(hero: IHeroInterface): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
+  // selectedHero?: IHeroInterface;
+  // onSelect(hero: IHeroInterface): void {
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  // }
 }
